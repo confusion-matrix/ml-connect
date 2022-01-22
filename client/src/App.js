@@ -18,6 +18,7 @@ const App = () => {
         <Route exact path="/" element={<RecordList />} />
         <Route path="/edit/:id" element={<Edit />} />
         <Route path="/create" element={<Create />} />
+        <Route path="/login" element={<Login />} />
       </Routes>
     </div>
   );
