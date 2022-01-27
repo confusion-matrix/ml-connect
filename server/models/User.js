@@ -8,7 +8,7 @@ const userSchema = new Schema(
   {
     username: {
       type: String,
-      required: true,
+      required: false,
       unique: true,
     },
     email: {
@@ -47,9 +47,10 @@ userSchema.methods.isCorrectPassword = async function (password) {
   return bcrypt.compare(password, this.password);
 };
 
-// when we query a user, we'll also get another field called `bookCount` with the number of saved books we have
-// userSchema.virtual("bookCount").get(function () {
-//   return this.savedBooks.length;
+// when we query a user, get username
+// userSchema.virtual("users").get(function () {
+//   console.log(username);
+//   return this.username;
 // });
 
 const User = model("User", userSchema);
