@@ -7,7 +7,7 @@ import Auth from "../utils/auth";
 const SignupForm = () => {
   // set initial form state
   const [userFormData, setUserFormData] = useState({
-    name: "",
+    username: "",
     email: "",
     password: "",
   });
