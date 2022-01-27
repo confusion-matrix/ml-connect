@@ -12,10 +12,17 @@ app.use(require("./routes"));
 // get driver connection
 const dbo = require("./db/conn");
 
+
+
 if (process.env.NODE_ENV === "production") {
   app.use(express.static(path.join(__dirname, "../client/build")));
 }
 
 dbo.once("open", () => {
+<<<<<<< HEAD
   app.listen(PORT, () => console.log(`🌍 Now listening on localhost:${PORT}`));
+=======
+  app.listen(port, () => console.log(`🌍 Now listening on localhost:${port}`));
+
+>>>>>>> 9f712ba33a890deb143c7231407c7d9a870fdca0
 });
