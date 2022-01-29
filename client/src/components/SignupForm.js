@@ -68,13 +68,13 @@ const SignupForm = () => {
         </Alert>
 
         <Form.Group>
-          <Form.Label htmlFor="name">Name</Form.Label>
+          <Form.Label htmlFor="username">Username</Form.Label>
           <Form.Control
             type="text"
             placeholder="Your name"
-            name="name"
+            name="username"
             onChange={handleInputChange}
-            value={userFormData.name}
+            value={userFormData.username}
             required
           />
           <Form.Control.Feedback type="invalid">
@@ -113,7 +113,11 @@ const SignupForm = () => {
         </Form.Group>
         <Button
           disabled={
-            !(userFormData.name && userFormData.email && userFormData.password)
+            !(
+              userFormData.username &&
+              userFormData.email &&
+              userFormData.password
+            )
           }
           type="submit"
           variant="success"
