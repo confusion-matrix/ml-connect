@@ -10,6 +10,9 @@ import Edit from "./components/SampleEdit";
 import Create from "./components/SampleCreate";
 import Login from "./components/login";
 
+// import UploadData from "./components/uploadData";
+import UserPage from "./components/userPage";
+
 const App = () => {
   return (
     <div>
@@ -18,6 +21,9 @@ const App = () => {
         <Route exact path="/" element={<RecordList />} />
         <Route path="/edit/:id" element={<Edit />} />
         <Route path="/create" element={<Create />} />
+        
+        
+        <Route path="/userPage" element={<UserPage />} />
       </Routes>
     </div>
   );

@@ -16,6 +16,7 @@
     START:
     FILE UPLOAD:
         - DRAG AND DROP CONTAINER: https://www.npmjs.com/package/react-drag-drop-files
+            - EXTRA: Convert Drag and Drop to this code: https://codesandbox.io/s/github/dineshselvantdm/drag-drop-file-upload-react-hooks?file=/utils/drag-drop.js
         - UPLOAD FROM FILE EXPLORER: https://www.geeksforgeeks.org/file-uploading-in-react-js/
     TENSORFLOW:
         - 
@@ -25,53 +26,55 @@
 */
 
 import React, { useState } from "react";
-import { useNavigate } from "react-router";
-import { FileUploader } from "react-drag-drop-files";
+import TfMobilenet from "./tfImage";
+import DragDrop from "./uploadData";
 
-// Add drag and drop file
-const fileTypes = ["JPG", "PNG", "txt", "docx"];
+// utils
+import { interpretDrop } from "../utils/interpretFile"
+import TfSequentialModel from "./tfTable";
 
-function UploadDragDrop() {
+const config = {
+    allowedFileFormats: ["image/jpeg", "image/jpg", "image/png", ".csv", "text/csv", "application/vnd.ms-excel", "text/plain"],
+    fileSizeMBLimit: 10,
+    filesLimit: 1
+};
+
+export default function UserPage() {
+    const [fileType, setFileType] = useState("empty");
     const [file, setFile] = useState(null);
-    
-    const handleChange = (file) => {
-        setFile(file);
-    };
-    return (
-        <div className="DragAndDropContainer">
-            <h2>Drag and drop your files here</h2>
-            <FileUploader handleChange={handleChange} name="file" types={fileTypes} />
-            <p>{file ? `File name: ${file.name}`: "No file uploaded yet"}</p>
-        </div>
-    );
-}
-// Add file through file explorer; also how to send file to server
-function UploadFileExplorer() {
-    const [file, setFile] = useState(null);
-    const [isFileSelected, setIsFileSelected] = useState(false);
 
-
-    const changeHandler = (e) => {
-        setFile(e.target.files[0]);
-        setIsFileSelected(true);
-    };
-
-    // use this function to upload transformed files to user database
-    const handleSubmission = () => {
+    function processDrop(file) {
+        setFile(file[0]);
+        setFileType(interpretDrop(file[0]));
 
     };
 
     return (
         <div>
-            <input type="file" name="file" onChange={changeHandler} />
-            <div>
-                <button onClick={handleSubmission}>Submit</button>
-                <p>{file ? `File name: ${file.name}`: "No file uploaded yet"}</p>
+            <h1 style={{ textAlign: "center" }}>User Page ...</h1>
+            <div style={{ margin: "auto", width: "50%" }}>
+                <DragDrop processDrop={processDrop} config={config}>
+                    <div>Drag and drop files here!</div>
+                </DragDrop>
+            </div>
+            <div className="actionContainers">
+                <TfMobilenet id="image" file={file} fileType={fileType}>
+                
+                </TfMobilenet>
+                {/* <div id="image" className={`${fileType === "image" ? "action" : "noAction"}`} onClick={e => identify(file)}>
+                    this is an image
+                </div> */}
+                {/* Change these to components */}
+                <TfSequentialModel id="table" file={file} fileType={fileType}>
+
+                </TfSequentialModel>
+                {/* <div id="table" className={`${fileType === "table" ? "noAction" : "noAction"}`} onClick={e => console.log(file)}>
+                    this is a table
+                </div> */}
+                <div id="text" className={`${fileType === "text" ? "action" : "noAction"}`} onClick={e => console.log(file)}>
+                    this is a text file
+                </div>
             </div>
         </div>
     )
 }
-
-
-// export default UploadDragDrop;
-// export default UploadFileExplorer
