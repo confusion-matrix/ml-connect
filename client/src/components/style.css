@@ -8,3 +8,28 @@
   margin-bottom: 5px;
   max-width: 600px;
 }
+
+.hidden {
+  display: none;
+}
+
+.hove{ 
+  padding: 1rem;
+}
+.hove:hover {
+  background: rgb(83, 83, 83);
+  border-radius: 1rem;
+}
+
+.butt:hover {
+  box-shadow: 1px 1px blanchedalmond;
+}
+
+.logsign {
+  color: red;
+  background: red
+}
+
+.losgsign:hover {
+  background: black;
+}
