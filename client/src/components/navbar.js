@@ -1,12 +1,14 @@
 // REQUIRES MAJOR REWORK
 import React, { useState } from "react";
 import { Navbar, Nav, Container, Modal, Tab } from "react-bootstrap";
+import { Navi, NaviItem, Dropdown } from "./navi";
 import SignUpForm from "./SignupForm";
 import Login from "./login";
 import Auth from "../utils/auth";
 
 // We import bootstrap to make our application look better.
 import "bootstrap/dist/css/bootstrap.css";
+import logo from '../imgs/scrappi.png'
 
 // We import NavLink to utilize the react router.
 import { NavLink, Link } from "react-router-dom";
@@ -14,64 +16,86 @@ import { NavLink, Link } from "react-router-dom";
 // Here, we display our Navbar
 export default function AppNavbar() {
   const [showModal, setShowModal] = useState(false);
+  const colorize = {
+    background: 'black',
+    color: 'white',
+  }
+  const box = {
+    background: 'black',
+    color: 'white',
+    position: 'absolute',
+    top: '58px',
+    right: '00px',
+    width: '200px',
+    borderRadius: '1rem'
+
+
+    
+  }
+ 
+  const bRadius = {
+    borderRadius: '1rem'
+  }
+  const statica = {
+    maxWidth: "100%",
+    height: '100%',
+    display: 'flex',
+    justifyContent: 'flex-end',
+    color: 'white',
+  }
+  const whiteText ={
+    color: 'white'
+  }
+  const color = {
+    
+    
+    background: 'linear-gradient(351deg, rgba(119,119,119,1) 0%, rgba(170,170,170,1) 48%, rgba(157,157,157,1) 100%)',
+    height: '5rem'
+  }
 
   return (
     // NAV BAR: TODO: ADD LINKS FOR SIGN IN LOGIN
-    <div>
-      <Navbar className="navbar navbar-expand-lg navbar-light bg-light">
+    
+    <div  >
+      <Navbar className="px-5 navbar justify-content-between" style={color}  >
         {/* THIS IS THE HOME BUTTON, CLICKING THIS SHOULD TAKE A USER TO THE HOMESCREEN */}
-        <NavLink className="navbar-brand" to="/">
+        <NavLink className="navbar-brand justify-content-between" to="/">
           {/* change icon */}
           <img
-            style={{ width: 25 + "%" }}
-            src="https://d3cy9zhslanhfa.cloudfront.net/media/3800C044-6298-4575-A05D5C6B7623EE37/4B45D0EC-3482-4759-82DA37D8EA07D229/webimage-8A27671A-8A53-45DC-89D7BF8537F15A0D.png"
-            alt="MongoDB Logo"
+            style={{ width:'17rem'}}
+            src={logo}
+            alt="ourLogo"
           ></img>
         </NavLink>
-        <button
-          className="navbar-toggler"
-          type="button"
-          data-toggle="collapse"
-          data-target="#navbarSupportedContent"
-          aria-controls="navbarSupportedContent"
-          aria-expanded="false"
-          aria-label="Toggle navigation"
-        >
-          <span className="navbar-toggler-icon"></span>
-        </button>
 
         {/* FORMAT THESE - MAKE HORIZONTAL */}
-        <div className="collapse navbar-collapse" id="navbarSupportedContent">
-          <ul className="navbar-nav ml-auto">
-            <li className="nav-item">
-              {/* ADD NAV LINKS HERE!!! LOGIN/SIGN UP - Follow process like CREATE */}
-              {/* fit to project */}
-              <NavLink className="nav-link" to="/create">
+        <Navi>
+        <NaviItem symbol="⚫️" className="butt" >
+         <div className='flex-end'style={box}>   
+              <div className='col'>
+              <NavLink  className="nav-link hove" style={statica}to="/create">
                 Create Record
               </NavLink>
-              {/* <NavLink className="nav-link" to="/login">
-                Login
-              </NavLink> */}
-              <Navbar.Collapse id="navbar">
+              </div>
+              <Navbar.Collapse  className="col hove" style={statica}id="navbar">
                 <Nav className="ml-auto">
                   {/* if user is logged in show saved books and logout */}
                   {Auth.loggedIn() ? (
                     <>
-                      <Nav.Link as={Link} to="/saved">
-                        See Your Books
-                      </Nav.Link>
-                      <Nav.Link onClick={Auth.logout}>Logout</Nav.Link>
+                      
+                    <Nav.Link onClick={Auth.logout}>Logout</Nav.Link>
                     </>
                   ) : (
-                    <Nav.Link onClick={() => setShowModal(true)}>
+                    <Nav.Link style={whiteText} onClick={() => setShowModal(true)}>
                       Login/Sign Up
                     </Nav.Link>
                   )}
                 </Nav>
               </Navbar.Collapse>
-            </li>
-          </ul>
-        </div>
+        </div> 
+          </NaviItem>
+      </Navi>
+       
       </Navbar>
       <Modal
         size="lg"
@@ -85,10 +109,10 @@ export default function AppNavbar() {
             <Modal.Title id="signup-modal">
               <Nav variant="pills">
                 <Nav.Item>
-                  <Nav.Link eventKey="login">Login</Nav.Link>
+                  <Nav.Link className="logsign" >Login</Nav.Link>
                 </Nav.Item>
                 <Nav.Item>
-                  <Nav.Link eventKey="signup">Sign Up</Nav.Link>
+                  <Nav.Link className="logsign" >Sign Up</Nav.Link>
                 </Nav.Item>
               </Nav>
             </Modal.Title>

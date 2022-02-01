@@ -1,6 +1,6 @@
 import React, { useEffect, useState } from "react";
 // import { Link } from "react-router-dom";
-import pic from '../imgs/1.png'
+import pic from '../imgs/3.png'
 // HOME PAGE
  
 
@@ -10,7 +10,7 @@ export default function HomePage() {
  return (
    <div className='main'>
     <div className='container align-content-center'>
-      <div className="text-center py-3">hello world</div>
+      <h1 className="text-center py-3">Welcome!</h1>
       <div className='row'>
         <img src={pic} className='py-3 col-sm-12 col-md-6'></img>
         <div className=" py-3 col-sm-12 col-md-6 align-content-center justify-content-center">
