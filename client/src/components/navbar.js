@@ -59,10 +59,6 @@ export default function AppNavbar() {
     <div  >
       <Navbar className="px-5 navbar justify-content-between" style={color}  >
         {/* THIS IS THE HOME BUTTON, CLICKING THIS SHOULD TAKE A USER TO THE HOMESCREEN */}
-<<<<<<< HEAD
-        <NavLink className="navbar-brand" to="/">
-          <img style={{ "width": 25 + '%' }} src="https://onlinejpgtools.com/images/examples-onlinejpgtools/random-grid.jpg"></img>
-=======
         <NavLink className="navbar-brand justify-content-between" to="/">
           {/* change icon */}
           <img
@@ -70,7 +66,6 @@ export default function AppNavbar() {
             src={logo}
             alt="ourLogo"
           ></img>
->>>>>>> b28964bd28ae962890f4cab78e9180267c9f16ae
         </NavLink>
 
         {/* FORMAT THESE - MAKE HORIZONTAL */}
@@ -81,19 +76,6 @@ export default function AppNavbar() {
               <NavLink  className="nav-link hove" style={statica}to="/create">
                 Create Record
               </NavLink>
-<<<<<<< HEAD
-              <NavLink className="nav-link" to="/login">
-                Sign Up
-              </NavLink>
-              {/* Directely test user page */}
-              <NavLink className="nav-link" to="/userPage">
-                User Page
-              </NavLink>
-            </li>
-          </ul>
-        </div>
-      </nav>
-=======
               </div>
               <Navbar.Collapse  className="col hove" style={statica}id="navbar">
                 <Nav className="ml-auto">
@@ -147,7 +129,6 @@ export default function AppNavbar() {
           </Modal.Body>
         </Tab.Container>
       </Modal>
->>>>>>> b28964bd28ae962890f4cab78e9180267c9f16ae
     </div>
   );
 }

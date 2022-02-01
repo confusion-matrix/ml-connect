@@ -26,13 +26,9 @@ const App = () => {
         <Route exact path="/" element={<HomePage />} />
         <Route path="/edit/:id" element={<Edit />} />
         <Route path="/create" element={<Create />} />
-<<<<<<< HEAD
         
         
         <Route path="/userPage" element={<UserPage />} />
-=======
-        <Route exact path="/RecordList" element={<RecordList />} />
->>>>>>> b28964bd28ae962890f4cab78e9180267c9f16ae
       </Routes>
       <Footer />
     </div>
