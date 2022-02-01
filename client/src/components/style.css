@@ -40,15 +40,47 @@
 }
 
 .losgsign:hover {
-  color: pink
+
+  background: black;
 }
 
-.fader {
-  animation: fadeIn 700ms;
+.button-wrapper button {
+  background-color: green;
+  color: black;
+  padding: 20px;
 }
 
-@keyframes fadeIn {
-  0% {opacity: 0; right: -100px}
-  100% {opacity: 1; right: 0px;}
-} 
+.error {
+  color: red;
+}
+.drag-container {
+  height: 300px;
+  width: 300px;
+  border: dashed rgb(206, 206, 206) 3px;
+  display: inline-block;
+}
+
+.overlay {
+  border-color: red;
+  background-color: gray;
+}
+
+.actionContainers {
+    display: flex;
+    flex-direction: row;
+}
+
+.action {
+    border: solid black;
+    margin: 25px;
+    padding: 100px;
+    cursor: pointer;
+}
+
+.noAction {
+  border: solid black;
+  margin: 25px;
+  padding: 100px;
+  pointer-events: none;
+}
 

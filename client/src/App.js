@@ -15,6 +15,9 @@ import Footer from "./components/footer";
 import RecordList from "./components/SampleRecordList";
 import "./components/style.css"
 
+// import UploadData from "./components/uploadData";
+import UserPage from "./components/userPage";
+
 const App = () => {
   const myStyle= {
     background: 'radial-gradient(circle, rgba(255,255,255,1) 0%, rgba(242,242,242,1) 62%, rgba(201,201,201,1) 100%)'
@@ -26,7 +29,9 @@ const App = () => {
         <Route exact path="/" element={<HomePage />} />
         <Route path="/edit/:id" element={<Edit />} />
         <Route path="/create" element={<Create />} />
-        <Route exact path="/RecordList" element={<RecordList />} />
+        
+        
+        <Route path="/userPage" element={<UserPage />} />
       </Routes>
       <Footer />
     </div>
