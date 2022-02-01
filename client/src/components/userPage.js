@@ -58,22 +58,15 @@ export default function UserPage() {
                 </DragDrop>
             </div>
             <div className="actionContainers">
-                <TfMobilenet id="image" file={file} fileType={fileType}>
-                
-                </TfMobilenet>
-                {/* <div id="image" className={`${fileType === "image" ? "action" : "noAction"}`} onClick={e => identify(file)}>
-                    this is an image
-                </div> */}
-                {/* Change these to components */}
-                <TfSequentialModel id="table" file={file} fileType={fileType}>
-
-                </TfSequentialModel>
-                {/* <div id="table" className={`${fileType === "table" ? "noAction" : "noAction"}`} onClick={e => console.log(file)}>
-                    this is a table
-                </div> */}
+                {/* Display result in new component <Results /> */}
+                <TfMobilenet id="image" file={file} fileType={fileType} />
+                <TfSequentialModel id="table" file={file} fileType={fileType} />
                 <div id="text" className={`${fileType === "text" ? "action" : "noAction"}`} onClick={e => console.log(file)}>
                     this is a text file
                 </div>
+            </div>
+            <div className="results">
+                
             </div>
         </div>
     )
