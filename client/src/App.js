@@ -15,6 +15,9 @@ import Footer from "./components/footer";
 import RecordList from "./components/SampleRecordList";
 import "./components/style.css"
 
+// import UploadData from "./components/uploadData";
+import UserPage from "./components/userPage";
+
 const App = () => {
   return (
     <div>
@@ -23,7 +26,9 @@ const App = () => {
         <Route exact path="/" element={<HomePage />} />
         <Route path="/edit/:id" element={<Edit />} />
         <Route path="/create" element={<Create />} />
-        <Route exact path="/RecordList" element={<RecordList />} />
+        
+        
+        <Route path="/userPage" element={<UserPage />} />
       </Routes>
       <Footer />
     </div>
