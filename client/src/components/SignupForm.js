@@ -111,6 +111,7 @@ const SignupForm = () => {
             Password is required!
           </Form.Control.Feedback>
         </Form.Group>
+        <div className="py-3">
         <Button
           disabled={
             !(
@@ -120,10 +121,11 @@ const SignupForm = () => {
             )
           }
           type="submit"
-          variant="success"
+          variant="danger"
         >
           Submit
         </Button>
+        </div>
       </Form>
     </>
   );

@@ -15,10 +15,19 @@
 
 .hove{ 
   padding: 1rem;
+  
+  
 }
 .hove:hover {
-  background: rgb(83, 83, 83);
+  border: 1px solid white;
   border-radius: 1rem;
+  background: rgb(37, 37, 37);
+  transition: 1s;
+  
+}
+
+.butt {
+  border-radius: 1px;
 }
 
 .butt:hover {
@@ -27,9 +36,19 @@
 
 .logsign {
   color: red;
-  background: red
+  
 }
 
 .losgsign:hover {
-  background: black;
+  color: pink
 }
+
+.fader {
+  animation: fadeIn 700ms;
+}
+
+@keyframes fadeIn {
+  0% {opacity: 0; right: -100px}
+  100% {opacity: 1; right: 0px;}
+} 
+

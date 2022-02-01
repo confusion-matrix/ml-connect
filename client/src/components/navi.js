@@ -1,5 +1,6 @@
 import React, {useState} from 'react';
 
+
 function Navi(props){
     return (
         <nav className='navi'>
@@ -16,9 +17,10 @@ function NaviItem(props) {
     return(
     <div className='item'>
 
-        <div onClick={()=> setOpen(!open)}>
+        <button className="btn btn-danger" onClick={()=> setOpen(!open)}>
             {props.symbol}
-        </div>
+        </button>
+        
         {open && props.children}
 
     </div>

@@ -8,7 +8,7 @@ import Auth from "../utils/auth";
 
 // We import bootstrap to make our application look better.
 import "bootstrap/dist/css/bootstrap.css";
-import logo from '../imgs/scrappi.png'
+import logo from '../imgs/scrappiw.png'
 
 // We import NavLink to utilize the react router.
 import { NavLink, Link } from "react-router-dom";
@@ -17,8 +17,8 @@ import { NavLink, Link } from "react-router-dom";
 export default function AppNavbar() {
   const [showModal, setShowModal] = useState(false);
   const colorize = {
-    background: 'black',
-    color: 'white',
+    
+    color: 'red',
   }
   const box = {
     background: 'black',
@@ -27,7 +27,8 @@ export default function AppNavbar() {
     top: '58px',
     right: '00px',
     width: '200px',
-    borderRadius: '1rem'
+    borderRadius: '1rem',
+    border: '2px solid black'
 
 
     
@@ -49,7 +50,7 @@ export default function AppNavbar() {
   const color = {
     
     
-    background: 'linear-gradient(351deg, rgba(119,119,119,1) 0%, rgba(170,170,170,1) 48%, rgba(157,157,157,1) 100%)',
+    background: 'black',
     height: '5rem'
   }
 
@@ -57,7 +58,7 @@ export default function AppNavbar() {
     // NAV BAR: TODO: ADD LINKS FOR SIGN IN LOGIN
     
     <div  >
-      <Navbar className="px-5 navbar justify-content-between" style={color}  >
+      <Navbar className="px-3 navbar justify-content-between" style={color}  >
         {/* THIS IS THE HOME BUTTON, CLICKING THIS SHOULD TAKE A USER TO THE HOMESCREEN */}
         <NavLink className="navbar-brand justify-content-between" to="/">
           {/* change icon */}
@@ -70,20 +71,22 @@ export default function AppNavbar() {
 
         {/* FORMAT THESE - MAKE HORIZONTAL */}
         <Navi>
-        <NaviItem symbol="⚫️" className="butt" >
-         <div className='flex-end'style={box}>   
+          
+        <NaviItem symbol=" " >
+          
+         <div className='flex-end py-2 mx-2 fader' style={box}>   
               <div className='col'>
               <NavLink  className="nav-link hove" style={statica}to="/create">
                 Create Record
               </NavLink>
               </div>
-              <Navbar.Collapse  className="col hove" style={statica}id="navbar">
+              <Navbar.Collapse  className="col hove" style={statica} id="navbar">
                 <Nav className="ml-auto">
                   {/* if user is logged in show saved books and logout */}
                   {Auth.loggedIn() ? (
                     <>
                       
-                    <Nav.Link onClick={Auth.logout}>Logout</Nav.Link>
+                    <Nav.Link style={whiteText} onClick={Auth.logout}>Logout</Nav.Link>
                     </>
                   ) : (
                     <Nav.Link style={whiteText} onClick={() => setShowModal(true)}>
@@ -92,7 +95,8 @@ export default function AppNavbar() {
                   )}
                 </Nav>
               </Navbar.Collapse>
-        </div> 
+        </div>
+       
           </NaviItem>
       </Navi>
        
@@ -107,19 +111,19 @@ export default function AppNavbar() {
         <Tab.Container defaultActiveKey="login">
           <Modal.Header closeButton>
             <Modal.Title id="signup-modal">
-              <Nav variant="pills">
-                <Nav.Item>
-                  <Nav.Link eventKey="login">Login</Nav.Link>
+              <Nav fill variant="tabs">
+                <Nav.Item >
+                  <Nav.Link eventKey="login" className='logsign' >Login</Nav.Link>
                 </Nav.Item>
                 <Nav.Item>
-                  <Nav.Link eventKey="signup">Sign Up</Nav.Link>
+                  <Nav.Link eventKey="signup" className='logsign'>Sign Up</Nav.Link>
                 </Nav.Item>
               </Nav>
             </Modal.Title>
           </Modal.Header>
           <Modal.Body>
             <Tab.Content>
-              <Tab.Pane eventKey="login">
+              <Tab.Pane eventKey="login" >
                 <Login handleModalClose={() => setShowModal(false)} />
               </Tab.Pane>
               <Tab.Pane eventKey="signup">
