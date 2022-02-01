@@ -15,10 +15,19 @@
 
 .hove{ 
   padding: 1rem;
+  
+  
 }
 .hove:hover {
-  background: rgb(83, 83, 83);
+  border: 1px solid white;
   border-radius: 1rem;
+  background: rgb(37, 37, 37);
+  transition: 1s;
+  
+}
+
+.butt {
+  border-radius: 1px;
 }
 
 .butt:hover {
@@ -27,10 +36,11 @@
 
 .logsign {
   color: red;
-  background: red
+  
 }
 
 .losgsign:hover {
+
   background: black;
 }
 
@@ -73,3 +83,4 @@
   padding: 100px;
   pointer-events: none;
 }
+

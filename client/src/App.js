@@ -19,8 +19,11 @@ import "./components/style.css"
 import UserPage from "./components/userPage";
 
 const App = () => {
+  const myStyle= {
+    background: 'radial-gradient(circle, rgba(255,255,255,1) 0%, rgba(242,242,242,1) 62%, rgba(201,201,201,1) 100%)'
+  }
   return (
-    <div>
+    <div style={myStyle}>
       <AppNavbar />
       <Routes>
         <Route exact path="/" element={<HomePage />} />
