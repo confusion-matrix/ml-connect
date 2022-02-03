@@ -34,24 +34,26 @@ function TfMobilenet({ file, fileType }) {
         console.log(img.height)
         const result = await model.classify(img);
         setResults(result);
+        console.log(result)
     }
 
     if (isModelLoading) {
-        return <h2>Loading model...</h2>
+        return <h2>Loading model...</h2> 
     }
 
     return (
         <div className="image">
-            <div id="image" className={`${fileType === "image" ? "action" : "noAction"}`} onClick={e => identify(file)}>
-                this is an image
-            </div>
+            <button id="image" className={`${fileType === "image" ? "action butt" : "noAction butt"}`} onClick={e => identify(file)}>
+                It's an image!
+            </button >
             {results.map(function (result, index) {
                 return (
-                    <div className="result" key={result.className}>
-                        <span className="name">{result.className}</span>
-                        <span className="confidence">Confidence Level: {(result.probability * 100)}% {index === 0 &&
-                            <span className="bestGuess">Best Guess</span>}
-                        </span>
+                    
+                    <div className="result col-12" key={result.className}>
+                        <div className="name">{result.className}</div>
+                        <div className="confidence">Confidence Level: {(result.probability * 100)}% {index === 0 &&
+                            <div className="bestGuess">Best Guess</div>}
+                        </div>
                     </div>
                 )
             })}

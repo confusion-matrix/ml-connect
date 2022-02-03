@@ -73,9 +73,9 @@ function TfSequentialModel({file, fileType}) {
 
     return (
         <div className="table">
-            <div id="table" className={`${fileType === "table" ? "noAction" : "noAction"}`} onClick={e => setShowColumns(true)}>
-                    this is a table
-            </div>
+            <button id="table" className={`${fileType === "table" ? "noAction butt" : "noAction butt"}`} onClick={e => setShowColumns(true)}>
+                    It's a table!
+            </button>
             {showColumns ? <SelectColumns /> : null}
         </div>
     );

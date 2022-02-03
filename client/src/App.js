@@ -15,6 +15,7 @@ import Footer from "./components/footer";
 import RecordList from "./components/SampleRecordList";
 import "./components/style.css";
 
+
 // import UploadData from "./components/uploadData";
 import UserPage from "./components/userPage";
 import Auth from "./utils/auth";

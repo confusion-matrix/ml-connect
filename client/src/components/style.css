@@ -26,13 +26,8 @@
   
 }
 
-.butt {
-  border-radius: 1px;
-}
 
-.butt:hover {
-  box-shadow: 1px 1px blanchedalmond;
-}
+
 
 .logsign {
   color: red;
@@ -55,9 +50,14 @@
 }
 .drag-container {
   height: 300px;
-  width: 300px;
-  border: dashed rgb(206, 206, 206) 3px;
+  width: 70vw;
+  border: solid rgb(0, 0, 0) 3px;
+  background: rgb(214, 214, 214);
   display: inline-block;
+}
+
+.drag-container:hover {
+  background-color: rgb(182, 182, 182);;
 }
 
 .overlay {
@@ -70,18 +70,44 @@
     flex-direction: row;
 }
 
+.butt {
+  display: inline-block;
+  
+  font-size: 24px;
+  cursor: pointer;
+  text-align: center;
+  text-decoration: none;
+  outline: none;
+  color: rgb(255, 255, 255);
+  background-color: #fd0606;
+  border: none;
+  border-radius: 1rem;
+  
+}
+
 .action {
-    border: solid black;
+    border: 2px solid black;
+    opacity: 1;
+    box-shadow: 1px 1px 25px red;
     margin: 25px;
     padding: 100px;
     cursor: pointer;
+    transition: 1s;
+    color: white;
 }
 
 .noAction {
-  border: solid black;
+  border: 3px solid black;
+  opacity: .5;
   margin: 25px;
   padding: 100px;
   pointer-events: none;
+  color: red;
+  
+}
+
+.image, .table {
+  width: fit-content;
 }
 
 
@@ -95,3 +121,20 @@
   0% {opacity: 0; right: -100px}
   100% {opacity: 1; right: 0px;}
 } 
+
+
+.spinner:hover {
+  animation-name: spin;
+  animation-duration: 5000ms;
+  animation-iteration-count: infinite;
+  animation-timing-function: linear; 
+}
+
+@keyframes spin {
+  from {
+      transform:rotate(0deg);
+  }
+  to {
+      transform:rotate(360deg);
+  }
+}

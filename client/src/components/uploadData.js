@@ -132,7 +132,7 @@ const  DragDrop = ({ processDrop, children, config }) => {
         <div>
             {error && <p className="error">{error}</p>}
             <div
-                className={`drag-container ${dragOverlayClass}`}
+                className={`drag-container ${dragOverlayClass}  d-flex align-items-center justify-content-center`}
                 onDragEnter={handleDragIn}
                 onDragLeave={handleDragOut}
                 onDragOver={handleDrag}

@@ -6,6 +6,7 @@ import SignUpForm from "./SignupForm";
 import Login from "./login";
 import Auth from "../utils/auth";
 
+
 // We import bootstrap to make our application look better.
 import "bootstrap/dist/css/bootstrap.css";
 import logo from '../imgs/scrappiw.png'
@@ -72,7 +73,7 @@ export default function AppNavbar() {
         {/* FORMAT THESE - MAKE HORIZONTAL */}
         <Navi>
           
-        <NaviItem symbol=" " >
+        <NaviItem >
           
          <div className='flex-end py-2 mx-2 fader' style={box}>   
               <div className='col'>
