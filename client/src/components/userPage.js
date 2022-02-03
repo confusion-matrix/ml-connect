@@ -28,6 +28,7 @@
 import React, { useState } from "react";
 import TfMobilenet from "./tfImage";
 import DragDrop from "./uploadData";
+import "bootstrap/dist/css/bootstrap.css";
 
 // utils
 import { interpretDrop } from "../utils/interpretFile"
@@ -51,22 +52,31 @@ export default function UserPage() {
 
     return (
         <div>
-            <h1 style={{ textAlign: "center" }}>User Page ...</h1>
-            <div style={{ margin: "auto", width: "50%" }}>
+            <h1  className='text-center py-3'>Let's anaylze some data!</h1>
+            <h5 className='text-center'> drag and drop your files into the scanner below</h5>
+            <div className='d-flex justify-content-center'>
+                <div className='width py-3 hmmm'>
                 <DragDrop processDrop={processDrop} config={config}>
-                    <div>Drag and drop files here!</div>
+                    <div className='text-center hmmm mx-3 px-3'>______________________________________________________________________________________________________________________________</div>
                 </DragDrop>
-            </div>
-            <div className="actionContainers">
-                {/* Display result in new component <Results /> */}
-                <TfMobilenet id="image" file={file} fileType={fileType} />
-                <TfSequentialModel id="table" file={file} fileType={fileType} />
-                <div id="text" className={`${fileType === "text" ? "action" : "noAction"}`} onClick={e => console.log(file)}>
-                    this is a text file
                 </div>
             </div>
-            <div className="results">
-                
+            <div className="actionContainers row d-flex justify-content-around py-3">
+                {/* Display result in new component <Results /> */}
+                <div className='col-sm-8 col-md-3'>
+                <TfMobilenet file={file} fileType={fileType} />
+                </div>
+                <div className='col-sm-8 col-md-3'>
+                <TfSequentialModel file={file} fileType={fileType} />
+                </div>
+                <div className='col-sm-8 col-md-3'>
+                <button id="text" className={`${fileType === "text" ? "action butt" : "noAction butt"}`} onClick={e => console.log(file)}>
+                    It's a text file!
+                </button>
+                </div>
+            </div>
+            <div className="results py-3">
+                {/* place results component here */}
             </div>
         </div>
     )

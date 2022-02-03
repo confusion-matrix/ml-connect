@@ -6,7 +6,9 @@ import SignUpForm from "./SignupForm";
 import Login from "./login";
 import Auth from "../utils/auth";
 
+
 import { getMe } from "../utils/API";
+
 
 // We import bootstrap to make our application look better.
 import "bootstrap/dist/css/bootstrap.css";
@@ -97,12 +99,16 @@ export default function AppNavbar() {
 
         {/* FORMAT THESE - MAKE HORIZONTAL */}
         <Navi>
-          <NaviItem symbol=" ">
-            <div className="flex-end py-2 mx-2 fader" style={box}>
-              <div className="col">
-                <NavLink className="nav-link hove" style={statica} to="/create">
-                  Create Record
-                </NavLink>
+
+          
+        <NaviItem >
+          
+         <div className='flex-end py-2 mx-2 fader' style={box}>   
+              <div className='col'>
+              <NavLink  className="nav-link hove" style={statica}to="/create">
+                Create Record
+              </NavLink>
+
               </div>
               <Navbar.Collapse className="col hove" style={statica} id="navbar">
                 <Nav className="ml-auto">
