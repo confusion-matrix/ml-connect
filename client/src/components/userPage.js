@@ -33,6 +33,7 @@ import "bootstrap/dist/css/bootstrap.css";
 // utils
 import { interpretDrop } from "../utils/interpretFile"
 import TfSequentialModel from "./tfTable";
+import feed from '../imgs/feed.png'
 
 const config = {
     allowedFileFormats: ["image/jpeg", "image/jpg", "image/png", ".csv", "text/csv", "application/vnd.ms-excel", "text/plain"],
@@ -51,25 +52,26 @@ export default function UserPage() {
     };
 
     return (
-        <div>
+        <div className='fader2'>
             <h1  className='text-center py-3'>Let's anaylze some data!</h1>
             <h5 className='text-center'> drag and drop your files into the scanner below</h5>
             <div className='d-flex justify-content-center'>
                 <div className='width py-3 hmmm'>
                 <DragDrop processDrop={processDrop} config={config}>
-                    <div className='text-center hmmm mx-3 px-3'>______________________________________________________________________________________________________________________________</div>
+                    <img src={feed} className='fit'></img>
+                    
                 </DragDrop>
                 </div>
             </div>
-            <div className="actionContainers row d-flex justify-content-around py-3">
+            <div className="actionContainers row justify-content-around align-content-center py-3">
                 {/* Display result in new component <Results /> */}
-                <div className='col-sm-8 col-md-3'>
+                <div className='col-sm-8 col-md-6 col-lg-3 d-flex justify-content-center'>
                 <TfMobilenet file={file} fileType={fileType} />
                 </div>
-                <div className='col-sm-8 col-md-3'>
+                <div className='col-sm-8 col-md-6 col-lg-3 d-flex justify-content-center'>
                 <TfSequentialModel file={file} fileType={fileType} />
                 </div>
-                <div className='col-sm-8 col-md-3'>
+                <div className='col-sm-8 col-md-6 col-lg-3 d-flex justify-content-center'>
                 <button id="text" className={`${fileType === "text" ? "action butt" : "noAction butt"}`} onClick={e => console.log(file)}>
                     It's a text file!
                 </button>

@@ -1,3 +1,8 @@
+html{
+  padding: 0;
+  margin: 0;
+}
+
 .form {
   margin: 20px;
 }
@@ -90,19 +95,20 @@
     opacity: 1;
     box-shadow: 1px 1px 25px red;
     margin: 25px;
-    padding: 100px;
+    padding: 50px;
     cursor: pointer;
-    transition: 1s;
+    transition: 4s;
     color: white;
 }
 
 .noAction {
   border: 3px solid black;
-  opacity: .5;
+  opacity: 0.5;
   margin: 25px;
-  padding: 100px;
+  padding: 50px;
   pointer-events: none;
   color: red;
+  
   
 }
 
@@ -110,11 +116,25 @@
   width: fit-content;
 }
 
+.fit{
+  width: 60vw;
+  height: 150px;
+  border: 3px solid black;
+  border-radius: 1rem;
+  background: rgb(100, 100, 100);
+}
 
+.fader2 {
+  animation: fadeIn2 4000ms;
+}
 
+@keyframes fadeIn2 {
+  0% {opacity: 0}
+  100% {opacity: 1}
+} 
 
 .fader {
-  animation: fadeIn 700ms;
+  animation: fadeIn 1000ms;
 }
 
 @keyframes fadeIn {
