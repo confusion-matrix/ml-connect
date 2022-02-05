@@ -6,7 +6,6 @@ import savedel from "../imgs/savedel.png";
 // HOME PAGE
 
 export default function HomePage() {
-  // This following section will display the table with the records of individuals.
   return (
     <div className="main fader2">
       <div className="container align-content-center">
@@ -21,6 +20,7 @@ export default function HomePage() {
             analysis that you can either save to your profile or delete.
           </div>
         </div>
+
       </div>
       <div className="container py-3">
         <div className="row justify-content-center">
@@ -52,5 +52,7 @@ export default function HomePage() {
         </div>
       </div>
     </div>
+    </div>
+    
   );
 }
