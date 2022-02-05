@@ -1,5 +1,4 @@
-import React, { useEffect, useState } from "react";
-// import { Link } from "react-router-dom";
+import React from "react";
 import pic from "../imgs/3.png";
 import drop from "../imgs/drop.png";
 import shiner from "../imgs/shiner.png";
