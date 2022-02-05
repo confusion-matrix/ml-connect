@@ -46,6 +46,12 @@ const Login = () => {
       password: "",
     });
   };
+   
+  function loggedIn() {
+    if (Auth.loggedIn) {
+      
+    }
+  }
 
   return (
     <>
@@ -91,6 +97,7 @@ const Login = () => {
           disabled={!(userFormData.email && userFormData.password)}
           type="submit"
           variant="success"
+          onClick={loggedIn()}
         >
           Submit
         </Button>

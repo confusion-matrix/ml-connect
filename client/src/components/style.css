@@ -73,3 +73,9 @@
   padding: 100px;
   pointer-events: none;
 }
+
+#predictions {
+  border: solid black;
+  margin: 25px;
+  padding: 150px;
+}

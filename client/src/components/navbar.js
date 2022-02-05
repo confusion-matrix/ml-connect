@@ -73,7 +73,7 @@ export default function AppNavbar() {
         <NaviItem symbol="⚫️" className="butt" >
          <div className='flex-end'style={box}>   
               <div className='col'>
-              <NavLink  className="nav-link hove" style={statica}to="/create">
+              <NavLink  className="nav-link hove" style={statica} to="/create">
                 Create Record
               </NavLink>
               </div>
@@ -82,7 +82,6 @@ export default function AppNavbar() {
                   {/* if user is logged in show saved books and logout */}
                   {Auth.loggedIn() ? (
                     <>
-                      
                     <Nav.Link onClick={Auth.logout}>Logout</Nav.Link>
                     </>
                   ) : (

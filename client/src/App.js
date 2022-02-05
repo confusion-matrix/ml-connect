@@ -9,11 +9,10 @@ import AppNavbar from "./components/navbar";
 import HomePage from "./components/homePage";
 import { Navi, NaviItem } from "./components/navi";
 
-import Edit from "./components/SampleEdit";
-import Create from "./components/SampleCreate";
 import Footer from "./components/footer";
-import RecordList from "./components/SampleRecordList";
 import "./components/style.css"
+
+import Auth from "./utils/auth";
 
 // import UploadData from "./components/uploadData";
 import UserPage from "./components/userPage";
@@ -23,11 +22,11 @@ const App = () => {
     <div>
       <AppNavbar />
       <Routes>
-        <Route exact path="/" element={<HomePage />} />
-        <Route path="/edit/:id" element={<Edit />} />
-        <Route path="/create" element={<Create />} />
-        
-        
+        {Auth.loggedIn() ? (
+          <Route path="/" element={<UserPage />}/>
+        ) : (
+          <Route exact path="/" element={<HomePage />} />
+        )}  
         <Route path="/userPage" element={<UserPage />} />
       </Routes>
       <Footer />
