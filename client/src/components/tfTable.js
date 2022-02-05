@@ -151,11 +151,12 @@ function TfSequentialModel({ file, fileType }) {
         const X_t = normalize(tf.tensor2d(X));
         // get y column
         const y = tf.tensor(data.map(obj => (!obj[selectedPrediction] ? 0 : parseInt(obj[selectedPrediction]))));
+        const y_t = normalize(y)
 
         const splitIdx = parseInt((1 - testSize) * data.length, 10);
 
         const [xTrain, xTest] = tf.split(X_t, [splitIdx, data.length - splitIdx]);
-        const [yTrain, yTest] = tf.split(y, [splitIdx, data.length - splitIdx]);
+        const [yTrain, yTest] = tf.split(y_t, [splitIdx, data.length - splitIdx]);
 
         return [xTrain, xTest, yTrain, yTest];
     };
@@ -173,17 +174,15 @@ function TfSequentialModel({ file, fileType }) {
     };
 
     async function linearRegressionModel(xTrain, yTrain, xTest, yTest) {
-        console.log("xTRAIN");
-        console.log(xTrain.shape[1])
-        const model = tf.sequential({
-            layers: [
-                tf.layers.dense({ inputShape: [xTrain.shape[1]], units: xTrain.shape[1], activation: "sigmoid" }),
-                tf.layers.dense({ units: 1 })
-            ]
-        });
-
+        console.log("linearRegressionModel");
+        xTrain.print();
+        yTrain.print();
+        const model = tf.sequential();
+        model.add(tf.layers.dense({inputShape: [xTrain.shape[1]], units: xTrain.shape[1], useBias: true}));
+        model.add(tf.layers.dense({units: 1, useBias: true}))
+        
         model.compile({
-            optimizer: tf.train.sgd(),
+            optimizer: tf.train.adam(),
             loss: tf.losses.meanSquaredError,
             metrics: ['mse']
         });
