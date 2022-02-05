@@ -1,6 +1,6 @@
 // const { MongoClient } = require("mongodb");
 const mongoose = require("mongoose");
-const Db = process.env.ATLAS_URI;
+const Db = process.env.ATLAS_URI || "mongodb://localhost/myFirstDatabase";
 // const mongooseClient = new MongoClient(Db, {
 //   useNewUrlParser: true,
 //   useUnifiedTopology: true,
