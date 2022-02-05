@@ -13,7 +13,7 @@ export default function HomePage() {
         <div className="row">
           <img src={pic} className="py-3 col-sm-12 col-md-6"></img>
           <div className=" py-3 col-sm-12 col-md-6 align-content-center justify-content-center">
-            Scrapper is a service to help people quickly parse though data and
+            Scrappi is a service to help people quickly parse though data and
             produce a short or long analysis. First you can present one or
             multiple documents, determine the file type, and then, using an open
             source AI library from TensorFlow, you will be presented with an

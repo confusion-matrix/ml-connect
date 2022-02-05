@@ -192,11 +192,11 @@ function TfSequentialModel({ file, fileType }) {
             epochs: 50,
             shuffle: true,
             validationSplit: 0.1,
-            // callbacks: tfvis.show.fitCallbacks(
-            //         {name: "Training Performance"},
-            //         ["loss", "mse"],
-            //         { height: 200, callbacks: ['onEpochEnd'] }
-            //     )
+            callbacks: tfvis.show.fitCallbacks(
+                     {name: "Training Performance"},
+                     ["loss", "mse"],
+                    { height: 200, callbacks: ['onEpochEnd'] }
+                )
         });
         console.log("Model done");
         modelPlot(model, xTest, yTest);
