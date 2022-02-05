@@ -16,9 +16,11 @@ export default function HomePage() {
       <h1 className="text-center py-3">Welcome!</h1>
       <div className='row'>
         <img src={pic} className='py-3 col-sm-12 col-md-6'></img>
-        <div className=" py-3 col-sm-12 col-md-6 align-content-center justify-content-center">
+        
+        <h3 className=" py-3 col-sm-12 col-md-6 align-content-center justify-content-center text-center">
+          <div className="py-lg-5 py-sm-1"></div>
           Scrapper is a service to help people quickly parse though data and produce a short or long analysis. First you can present one or multiple documents, determine the file type, and then, using an open source AI library from TensorFlow, you will be presented with an analysis that you can either save to your profile or delete.
-          </div>
+          </h3>
       </div>
     </div>
     <div className="container py-3">

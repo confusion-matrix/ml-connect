@@ -18,7 +18,7 @@
   "author": "",
   "license": "ISC",
   "devDependencies": {
-    "concurrently": "^5.1.0"
+    "concurrently": "^7.0.0"
   },
   "bugs": {
     "url": "https://github.com/confusion-matrix/ml-connect/issues"
