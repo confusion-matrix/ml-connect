@@ -16,6 +16,7 @@ import * as Plotly from "plotly.js-dist";
 function TfSequentialModel({ file, fileType }) {
 
     // ============================ MODEL/DATA PROCESSING ===============================
+    const [showResults, setShowResults] = useState(false)
     const [showColumns, setShowColumns] = useState(false);
     const [showPrediction, setShowPrediction] = useState(false);
     const [columns, setColumns] = useState(null);
@@ -192,11 +193,11 @@ function TfSequentialModel({ file, fileType }) {
             epochs: 50,
             shuffle: true,
             validationSplit: 0.1,
-            callbacks: tfvis.show.fitCallbacks(
-                    {name: "Training Performance"},
-                    ["loss", "mse"],
-                    { height: 200, callbacks: ['onEpochEnd'] }
-                )
+            // callbacks: tfvis.show.fitCallbacks(
+            //         {name: "Training Performance"},
+            //         ["loss", "mse"],
+            //         { height: 200, callbacks: ['onEpochEnd'] }
+            //     )
         });
         console.log("Model done");
         modelPlot(model, xTest, yTest);
@@ -205,6 +206,7 @@ function TfSequentialModel({ file, fileType }) {
     // ========================= PLOT FUNCTIONS ==============================
 
     const renderPredictions = (trueValues, lmPredictions) => {
+        setShowResults(true)
         var trace = {
             x: [...Array(trueValues.length).keys()],
             y: trueValues,
@@ -265,7 +267,7 @@ function TfSequentialModel({ file, fileType }) {
 
     function makeColButtons(col) {
         return (
-            <button key={col} onClick={() => featureSelect(col)}>
+            <button className='butt2 btn-danger m-1' key={col} onClick={() => featureSelect(col)}>
                 {col}
             </button>
         );
@@ -287,9 +289,11 @@ function TfSequentialModel({ file, fileType }) {
                     Click Done when you're finished<br></br>
                 </p>
                 {columns.map(makeColButtons)}
-                <button onClick={() => doneSelectingFeatures()}>
+                <div className="d-flex justify-content-center">
+                <button className='butt2' onClick={() => doneSelectingFeatures()}>
                     Done
                 </button>
+                </div>
             </div>
         )
     };
@@ -332,14 +336,24 @@ function TfSequentialModel({ file, fileType }) {
         return cleanedData;
     };
 
+   
+    function PrintOut(){
+        return(
+            <div className="paper2" >
+                 
+            <div id="predictions" ></div>
+            </div>
+        )
+    }
+
     return (
         <div className="table">
-            <button id="table" className={`${fileType === "table" ? "noAction butt" : "noAction butt"}`} onClick={e => getColumns()}>
+            <button id="table" className={`${fileType === "table" ? "action butt" : "noAction butt"}`} onClick={e => getColumns()}>
                     It's a table!
             </button>
-            {showColumns ? <SelectColumns /> : null}
-            {showPrediction ? <Prediction /> : null}
-            <div id="predictions"></div>
+                    {showColumns ? <SelectColumns /> : null}
+                    {showPrediction ? <Prediction /> : null}
+            {showResults ? <PrintOut/> : null}
         </div>
     );
 }
