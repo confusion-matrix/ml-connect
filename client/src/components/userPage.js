@@ -42,44 +42,51 @@ const config = {
 };
 
 export default function UserPage() {
-    const [fileType, setFileType] = useState("empty");
-    const [file, setFile] = useState(null);
+  const [fileType, setFileType] = useState("empty");
+  const [file, setFile] = useState(null);
 
-    function processDrop(file) {
-        setFile(file[0]);
-        setFileType(interpretDrop(file[0]));
+  function processDrop(file) {
+    setFile(file[0]);
+    setFileType(interpretDrop(file[0]));
+  }
+  function reloader(){
+      window.location.reload()
+  }
 
-    };
-
-    return (
-        <div className='fader2'>
-            <h1  className='text-center py-3'>Let's anaylze some data!</h1>
-            <h5 className='text-center'> drag and drop your files into the scanner below</h5>
-            <div className='d-flex justify-content-center'>
-                <div className='width py-3 hmmm'>
-                <DragDrop processDrop={processDrop} config={config}>
-                    <img src={feed} className='fit'></img>
-                    
-                </DragDrop>
-                </div>
-            </div>
-            <div className="actionContainers row justify-content-around align-content-center py-3">
-                {/* Display result in new component <Results /> */}
-                <div className='col-sm-8 col-md-6 col-lg-3 d-flex justify-content-center'>
-                <TfMobilenet file={file} fileType={fileType} />
-                </div>
-                <div className='col-sm-8 col-md-6 col-lg-3 d-flex justify-content-center'>
-                <TfSequentialModel file={file} fileType={fileType} />
-                </div>
-                <div className='col-sm-8 col-md-6 col-lg-3 d-flex justify-content-center'>
+  return (
+    <div className="fader2">
+      <h1 className="text-center py-3">Let's anaylze some data!</h1>
+      <h5 className="text-center">
+        {" "}
+        drag and drop your files into the scanner below
+      </h5>
+      <div className="d-flex justify-content-center">
+        <div className="width py-3 hmmm">
+          <DragDrop processDrop={processDrop} config={config}>
+            <img src={feed} className="fit"></img>
+          </DragDrop>
+        </div>
+        
+      </div>
+      
+      <div className="actionContainers row justify-content-around align-content-center py-3">
+        {/* Display result in new component <Results /> */}
+        <div className="col-sm-8 col-md-6 col-lg-3 d-flex justify-content-center">
+          <TfMobilenet file={file} fileType={fileType} />
+        </div>
+        <div className="col-sm-8 col-md-6 col-lg-3 d-flex justify-content-center">
+          <TfSequentialModel file={file} fileType={fileType} />
+        </div>
+        {/* <div className='col-sm-8 col-md-6 col-lg-3 d-flex justify-content-center'>
                 <button id="text" className={`${fileType === "text" ? "action butt" : "noAction butt"}`} onClick={e => console.log(file)}>
                     It's a text file!
                 </button>
-                </div>
-            </div>
-            <div className="results py-3">
-                {/* place results component here */}
-            </div>
-        </div>
-    )
+                </div> */}
+      </div>
+      <div className='d-flex justify-content-center'>
+      <button onClick={reloader} className=" btn-danger butty">reboot</button>
+      </div>
+      <div className="results py-3">{/* place results component here */}</div>
+    </div>
+  );
 }

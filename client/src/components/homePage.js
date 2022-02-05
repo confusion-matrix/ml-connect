@@ -7,6 +7,7 @@ import savedel from "../imgs/savedel.png";
 // HOME PAGE
 
 export default function HomePage() {
+<<<<<<< HEAD
   // This following section will display the table with the records of individuals.
   return (
     <div className="main fader2">
@@ -22,6 +23,20 @@ export default function HomePage() {
             analysis that you can either save to your profile or delete.
           </div>
         </div>
+=======
+ // This following section will display the table with the records of individuals.
+ return (
+   <div className='main fader2'>
+    <div className='container align-content-center'>
+      <h1 className="text-center py-3">Welcome!</h1>
+      <div className='row'>
+        <img src={pic} className='py-3 col-sm-12 col-md-6'></img>
+        
+        <h3 className=" py-3 col-sm-12 col-md-6 align-content-center justify-content-center text-center">
+          <div className="py-lg-5 py-sm-1"></div>
+          Scrapper is a service to help people quickly parse though data and produce a short or long analysis. First you can present one or multiple documents, determine the file type, and then, using an open source AI library from TensorFlow, you will be presented with an analysis that you can either save to your profile or delete.
+          </h3>
+>>>>>>> b652ebd32d8f9c566eefeab134e8670f46e324ec
       </div>
       <div className="container py-3">
         <div className="row justify-content-center">

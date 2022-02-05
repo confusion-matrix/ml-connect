@@ -43,7 +43,32 @@ html{
   
   
 }
+.paper2{
+  width: 500px;
+  background-color: white;
+  background-image: url('../imgs/printOut.png');
+  background-repeat: no-repeat;
+  background-size: contain;
+  padding: 7rem 3rem 1rem 1rem;
+  border: 1px solid black;
+  /* left: 800px */
+  
+  
+}
 
+.butty{
+  display: inline-block;
+  
+  font-size: 24px;
+  cursor: pointer;
+  text-align: center;
+  text-decoration: none;
+  outline: none;
+  color: rgb(255, 255, 255);
+  background-color: #fd0606;
+  border: 1px solid black;
+  border-radius: 5px;
+}
 
 .logsign {
   color: red;
@@ -118,16 +143,14 @@ html{
   margin: 25px;
   padding: 50px;
   pointer-events: none;
+  color: #fd0606;
 }
 
-#predictions {
-  border: solid black;
-  margin: 25px;
-  padding: 150px;
-  color: red;
+/* #predictions {
+  object-fit: contain;
   
   
-}
+} */
 
 .image, .table {
   width: fit-content;
@@ -140,6 +163,14 @@ html{
   border-radius: 1rem;
   background: rgb(100, 100, 100);
 }
+
+.green{
+  background-color: green;
+  color: white;
+}
+
+
+
 
 .fader2 {
   animation: fadeIn2 4000ms;
@@ -174,4 +205,12 @@ html{
   to {
       transform:rotate(360deg);
   }
+}
+.scroll{
+  animation: scroller 4s;
+}
+
+@keyframes scroller {
+  0% {opacity: 0;}
+  100% {opacity: 1;}
 }

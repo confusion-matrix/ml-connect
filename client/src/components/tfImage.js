@@ -43,7 +43,7 @@ function TfMobilenet({ file, fileType }) {
 
     function PrintOut(){
         return(
-            <div className="paper">
+            <div className="paper scroll">
                  {results.map(function (result, index) {
                 return (
                     
