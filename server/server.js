@@ -3,7 +3,7 @@ const path = require("path");
 const app = express();
 const cors = require("cors");
 const routes = require("./routes");
-require("dotenv").config({ path: "./config.env" });
+require("dotenv").config({ path: "./.env" });
 const PORT = process.env.PORT || 3001;
 app.use(cors());
 app.use(express.urlencoded({ extended: true }));
