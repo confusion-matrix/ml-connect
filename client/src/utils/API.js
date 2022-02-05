@@ -27,3 +27,14 @@ export const loginUser = (userData) => {
     body: JSON.stringify(userData),
   });
 };
+
+// export const changePassword = (token, userData) => {
+//   return fetch("/api/users/me", {
+//     method: "PUT",
+//     headers: {
+//       "Content-Type": "application/json",
+//       authorization: `Bearer ${token}`,
+//     },
+//     body: JSON.stringify(userData),
+//   });
+// };

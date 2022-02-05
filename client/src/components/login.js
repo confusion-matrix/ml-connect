@@ -55,7 +55,7 @@ const Login = () => {
 
   return (
     <>
-      <Form noValidate validated={validated} onSubmit={handleFormSubmit}>
+      <Form className='py-1' noValidate validated={validated} onSubmit={handleFormSubmit}>
         <Alert
           dismissible
           onClose={() => setShowAlert(false)}
@@ -64,7 +64,7 @@ const Login = () => {
         >
           Something went wrong with your login credentials!
         </Alert>
-        <Form.Group>
+        <Form.Group >
           <Form.Label htmlFor="email">Email</Form.Label>
           <Form.Control
             type="text"
@@ -79,7 +79,7 @@ const Login = () => {
           </Form.Control.Feedback>
         </Form.Group>
 
-        <Form.Group>
+        <Form.Group >
           <Form.Label htmlFor="password">Password</Form.Label>
           <Form.Control
             type="password"
@@ -93,14 +93,16 @@ const Login = () => {
             Password is required!
           </Form.Control.Feedback>
         </Form.Group>
+        <div className='py-3'>
         <Button
+          
           disabled={!(userFormData.email && userFormData.password)}
           type="submit"
-          variant="success"
-          onClick={loggedIn()}
+          variant="danger"
         >
           Submit
         </Button>
+        </div>
       </Form>
     </>
   );

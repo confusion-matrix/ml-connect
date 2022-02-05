@@ -1,4 +1,6 @@
 import React, {useState} from 'react';
+import cog from '../imgs/cog.png'
+
 
 function Navi(props){
     return (
@@ -16,9 +18,10 @@ function NaviItem(props) {
     return(
     <div className='item'>
 
-        <div onClick={()=> setOpen(!open)}>
-            {props.symbol}
-        </div>
+        <button className="btn btn-danger" onClick={()=> setOpen(!open)}>
+            <img className="spinner" src={cog} width='50rem'></img>
+        </button>
+        
         {open && props.children}
 
     </div>

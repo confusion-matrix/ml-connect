@@ -7,10 +7,10 @@ module.exports = {
   // get a single user by either their id or their username
   async getSingleUser({ user = null, params }, res) {
     const foundUser = await User.findOne({
-      $or: [
-        { _id: user ? user._id : params.id },
-        { username: params.username },
-      ],
+      // $or: [
+      //   { _id: user ? user._id : params.id },
+      //   { username: params.username },
+      // ],
     });
 
     if (!foundUser) {
@@ -20,6 +20,7 @@ module.exports = {
     }
 
     res.json(foundUser);
+    console.log(`1${foundUser}`);
   },
   // create a user, sign a token, and send it back (to client/src/components/SignUpForm.js)
   async createUser({ body }, res) {
@@ -49,6 +50,7 @@ module.exports = {
     const token = signToken(user);
     res.json({ token, user });
   },
+
   // save a book to a user's `savedBooks` field by adding it to the set (to prevent duplicates)
   // user comes from `req.user` created in the auth middleware function
   //   async saveBook({ user, body }, res) {

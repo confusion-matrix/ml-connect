@@ -1,6 +1,9 @@
 import React, { useEffect, useState } from "react";
 // import { Link } from "react-router-dom";
 import pic from '../imgs/3.png'
+import drop from '../imgs/drop.png'
+import shiner from '../imgs/shiner.png'
+import savedel from '../imgs/savedel.png'
 // HOME PAGE
  
 
@@ -8,7 +11,7 @@ import pic from '../imgs/3.png'
 export default function HomePage() {
  // This following section will display the table with the records of individuals.
  return (
-   <div className='main'>
+   <div className='main fader2'>
     <div className='container align-content-center'>
       <h1 className="text-center py-3">Welcome!</h1>
       <div className='row'>
@@ -20,9 +23,21 @@ export default function HomePage() {
     </div>
     <div className="container py-3">
       <div className="row justify-content-center">
-        <div className='py-3 col-sm-8 col-md-3'>Step 1 drag your file into the box</div>
-        <div className='py-3 col-sm-8 col-md-3'>Step 2 select your file type, size and response length then wait</div>
-        <div className='py-3 col-sm-8 col-md-3'>Step 3 get your result that you can either save to your profile or delete</div>
+        <div className='py-3 col-sm-8 col-md-3'>
+          <img className='w-100' src={drop}></img>
+          <h3>Step 1</h3>
+          <p>Drag your file into the box</p>
+          </div>
+        <div className='py-3 col-sm-8 col-md-3'>
+        <img src={shiner} className='w-100' ></img>
+        <h3>Step 2</h3>
+          <p>Select your file type, size and response length then wait</p>
+          </div>
+        <div className='py-3 col-sm-8 col-md-3'>
+        <img src={savedel} className='w-100' ></img>
+        <h3>Step 3</h3>
+          <p>Review your result which you can either save to your profile or delete</p>
+          </div>
       </div>
     </div>
    </div>

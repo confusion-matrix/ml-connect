@@ -1,3 +1,8 @@
+html{
+  padding: 0;
+  margin: 0;
+}
+
 .form {
   margin: 20px;
 }
@@ -15,22 +20,38 @@
 
 .hove{ 
   padding: 1rem;
+  
+  
 }
 .hove:hover {
-  background: rgb(83, 83, 83);
+  border: 1px solid white;
   border-radius: 1rem;
+  background: rgb(37, 37, 37);
+  transition: 1s;
+  
 }
 
-.butt:hover {
-  box-shadow: 1px 1px blanchedalmond;
+.paper{
+  width: 300px;
+  background-color: white;
+  background-image: url('../imgs/printOut.png');
+  background-repeat: no-repeat;
+  background-size: contain;
+  padding: 5rem 3rem 1rem 1rem;
+  border: 1px solid black
+  
+  
+  
 }
+
 
 .logsign {
   color: red;
-  background: red
+  
 }
 
 .losgsign:hover {
+
   background: black;
 }
 
@@ -45,9 +66,14 @@
 }
 .drag-container {
   height: 300px;
-  width: 300px;
-  border: dashed rgb(206, 206, 206) 3px;
+  width: 70vw;
+  border: solid rgb(0, 0, 0) 3px;
+  background: rgb(214, 214, 214);
   display: inline-block;
+}
+
+.drag-container:hover {
+  background-color: rgb(182, 182, 182);;
 }
 
 .overlay {
@@ -60,17 +86,37 @@
     flex-direction: row;
 }
 
+.butt {
+  display: inline-block;
+  
+  font-size: 24px;
+  cursor: pointer;
+  text-align: center;
+  text-decoration: none;
+  outline: none;
+  color: rgb(255, 255, 255);
+  background-color: #fd0606;
+  border: none;
+  border-radius: 1rem;
+  
+}
+
 .action {
-    border: solid black;
+    border: 2px solid black;
+    opacity: 1;
+    box-shadow: 1px 1px 25px red;
     margin: 25px;
-    padding: 100px;
+    padding: 50px;
     cursor: pointer;
+    transition: 4s;
+    color: white;
 }
 
 .noAction {
-  border: solid black;
+  border: 3px solid black;
+  opacity: 0.5;
   margin: 25px;
-  padding: 100px;
+  padding: 50px;
   pointer-events: none;
 }
 
@@ -78,4 +124,54 @@
   border: solid black;
   margin: 25px;
   padding: 150px;
+  color: red;
+  
+  
+}
+
+.image, .table {
+  width: fit-content;
+}
+
+.fit{
+  width: 60vw;
+  height: 150px;
+  border: 3px solid black;
+  border-radius: 1rem;
+  background: rgb(100, 100, 100);
+}
+
+.fader2 {
+  animation: fadeIn2 4000ms;
+}
+
+@keyframes fadeIn2 {
+  0% {opacity: 0}
+  100% {opacity: 1}
+} 
+
+.fader {
+  animation: fadeIn 1000ms;
+}
+
+@keyframes fadeIn {
+  0% {opacity: 0; right: -100px}
+  100% {opacity: 1; right: 0px;}
+} 
+
+
+.spinner:hover {
+  animation-name: spin;
+  animation-duration: 5000ms;
+  animation-iteration-count: infinite;
+  animation-timing-function: linear; 
+}
+
+@keyframes spin {
+  from {
+      transform:rotate(0deg);
+  }
+  to {
+      transform:rotate(360deg);
+  }
 }

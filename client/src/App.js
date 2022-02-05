@@ -18,16 +18,21 @@ import Auth from "./utils/auth";
 import UserPage from "./components/userPage";
 
 const App = () => {
+  const myStyle = {
+    background:
+      "radial-gradient(circle, rgba(255,255,255,1) 0%, rgba(242,242,242,1) 62%, rgba(201,201,201,1) 100%)",
+  };
   return (
-    <div>
+    <div style={myStyle}>
       <AppNavbar />
       <Routes>
         {Auth.loggedIn() ? (
-          <Route path="/" element={<UserPage />}/>
+          <Route path="/" element={<UserPage  />} />
         ) : (
           <Route exact path="/" element={<HomePage />} />
-        )}  
-        <Route path="/userPage" element={<UserPage />} />
+        )}
+        {/* <Route path="/edit/:id" element={<Edit />} />
+        <Route path="/create" element={<Create />} /> */}
       </Routes>
       <Footer />
     </div>
