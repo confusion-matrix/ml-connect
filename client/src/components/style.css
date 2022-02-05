@@ -118,6 +118,12 @@ html{
   margin: 25px;
   padding: 50px;
   pointer-events: none;
+}
+
+#predictions {
+  border: solid black;
+  margin: 25px;
+  padding: 150px;
   color: red;
   
   

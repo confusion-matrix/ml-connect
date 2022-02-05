@@ -105,7 +105,7 @@ export default function AppNavbar() {
           
          <div className='flex-end py-2 mx-2 fader' style={box}>   
               <div className='col'>
-              <NavLink  className="nav-link hove" style={statica}to="/create">
+              <NavLink  className="nav-link hove" style={statica} to="/create">
                 Create Record
               </NavLink>
 

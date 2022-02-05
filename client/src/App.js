@@ -9,16 +9,13 @@ import AppNavbar from "./components/navbar";
 import HomePage from "./components/homePage";
 import { Navi, NaviItem } from "./components/navi";
 
-import Edit from "./components/SampleEdit";
-import Create from "./components/SampleCreate";
 import Footer from "./components/footer";
-import RecordList from "./components/SampleRecordList";
-import "./components/style.css";
+import "./components/style.css"
 
+import Auth from "./utils/auth";
 
 // import UploadData from "./components/uploadData";
 import UserPage from "./components/userPage";
-import Auth from "./utils/auth";
 
 const App = () => {
   const myStyle = {

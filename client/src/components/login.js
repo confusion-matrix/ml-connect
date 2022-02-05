@@ -46,6 +46,12 @@ const Login = () => {
       password: "",
     });
   };
+   
+  function loggedIn() {
+    if (Auth.loggedIn) {
+      
+    }
+  }
 
   return (
     <>
