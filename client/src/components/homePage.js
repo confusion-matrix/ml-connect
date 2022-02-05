@@ -21,7 +21,6 @@ export default function HomePage() {
             analysis that you can either save to your profile or delete.
           </div>
         </div>
-
       </div>
       <div className="container py-3">
         <div className="row justify-content-center">
@@ -53,7 +52,5 @@ export default function HomePage() {
         </div>
       </div>
     </div>
-    </div>
-    
   );
 }
